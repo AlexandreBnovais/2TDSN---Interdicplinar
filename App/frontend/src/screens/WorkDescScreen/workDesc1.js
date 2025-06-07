@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { StatusBar } from 'react-native-web';
 
-export const WorkDesc1 = () => {
+export function WorkDesc1() {
   const Navigation = useNavigation();
 
   return (

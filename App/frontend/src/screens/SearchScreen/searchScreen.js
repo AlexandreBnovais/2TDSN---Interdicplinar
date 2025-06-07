@@ -18,7 +18,7 @@ const DATA = [
     {id: 5, name: 'Monetário'}
 ];
 
-export const SearchScreen = () => {
+export function SearchScreen() {
     const [search, setSearch] = useState('');
 
     const filterItem = DATA.filter(item => 

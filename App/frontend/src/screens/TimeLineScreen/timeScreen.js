@@ -10,7 +10,7 @@ import Feather from '@expo/vector-icons/Feather';
 import { FiltroItem } from '../../components/filtroItem';
 import { CardItem } from '../../components/cardItem';
 
-export const TimeScreen = () => {    
+export function TimeScreen() {    
     const [vagas, setVagas] = useState([]);
     const [filtro, setFiltro] = useState(['Popular', 'Local', 'Novo', 'Escolar']);
     const [filtroSelecionado, setFiltroSelecionado] = useState(null);

@@ -2,7 +2,7 @@ import { Image, View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './styled';
 
-export const HomeScreen = () => {
+export function HomeScreen() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>

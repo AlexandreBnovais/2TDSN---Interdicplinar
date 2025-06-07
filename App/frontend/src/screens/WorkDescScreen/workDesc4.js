@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-export const WorkDesc4 = () => {
+export function WorkDesc4() {
   const Navigation = useNavigation();
 
   return (

@@ -1,27 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { TimeScreen } from '../../screens/TimeLineScreen/timeScreen';
 import { SearchScreen } from '../../screens/SearchScreen/searchScreen';
+import { FavoriteScreen } from '../../screens/FavoriteScreen/favoriteScreen';
+import { SettingsScreen } from '../../screens/SettingScreen/settingScreen';
+
+
 
 const Tab = createBottomTabNavigator();
-
-const SettingsScreen = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings Screen</Text>
-    </View>
-  )
-}
-
-const FavoriteScreen = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Favorite Screen</Text>
-    </View>
-  )
-}
 
 export function Tabs () {
   return (

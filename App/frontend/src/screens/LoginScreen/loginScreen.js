@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './style';
 
-export const LoginScreen = () => {
+export function LoginScreen() {
     const navigation = useNavigation();
     const [isName, setName] = useState('');
     const [isPassword, setPassword] = useState('');
