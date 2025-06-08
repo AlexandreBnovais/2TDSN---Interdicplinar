@@ -1,1 +1,1 @@
-const db = require('./db/models')
+const db = require('./db/models/index')
