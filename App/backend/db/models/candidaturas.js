@@ -14,10 +14,40 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Candidaturas.init({
-    status: DataTypes.ENUM
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    data_candidatura: {
+      type: DataTypes.DATE,
+      defaultValue: 'CURRENT_TIMESTAMP'
+    },
+    status: {
+      type: DataTypes.ENUM('Pedente', 'Aceita', 'Recusada'),
+      defaultValue: 'Pendente'
+    }
   }, {
     sequelize,
+    timestamps: true,
     modelName: 'Candidaturas',
   });
+
+  Candidaturas.associate = (models) => {
+    Candidaturas.belongsTo(models.Users, {
+      foreignKey: {
+        name: 'UserId',
+        type: DataTypes.INTEGER
+      }
+    });
+    
+    Candidaturas.belongsTo(models.Vagas, {
+      foreignKey: {
+        name: 'VagaId',
+        type: DataTypes.INTEGER
+      }
+    });
+  };
   return Candidaturas;
 };

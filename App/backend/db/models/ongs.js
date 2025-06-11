@@ -14,12 +14,46 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Ongs.init({
-    nome: DataTypes.STRING,
-    email: DataTypes.STRING,
-    telefone: DataTypes.STRING
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    nome: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    email: {
+      allowNull: false,
+      unique: true,
+      type: DataTypes.STRING
+    },
+    telefone: {
+      type: DataTypes.STRING,
+      validate: {
+        is: '^[0-9()+-]{8,20}$'  
+      }
+    },
+    cnpj: {
+      unique: true,
+      allowNull: false,
+      type: DataTypes.STRING
+    }
   }, {
     sequelize,
+    timestamps: true,
     modelName: 'Ongs',
   });
+
+  Ongs.associate = (models) => {
+    Ongs.hasMany(models.Vagas,{
+      foreignKey: {
+        name: 'OngId',
+        allowNull: false,
+        type: DataTypes.INTEGER
+      }
+    });
+  };
   return Ongs;
 };

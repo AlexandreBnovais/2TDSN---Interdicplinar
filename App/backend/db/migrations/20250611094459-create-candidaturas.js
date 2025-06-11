@@ -9,8 +9,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      UserId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      VagasId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Vagas',
+          key: 'id'
+        }
+      },
       status: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM('Pendente', 'Aceita','Recusada')
       },
       createdAt: {
         allowNull: false,

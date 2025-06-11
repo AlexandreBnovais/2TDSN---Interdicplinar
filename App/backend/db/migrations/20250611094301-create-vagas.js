@@ -10,13 +10,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tituto: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(100)
       },
       descricao: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       localizacao: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100)
+      },
+      data_inicio: {
+        type: Sequelize.DATE
+      },
+      data_fim: {
+        type: Sequelize.DATE
+      },
+      requisitos: {
+        type: Sequelize.TEXT
+      },
+      OngId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Ongs',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

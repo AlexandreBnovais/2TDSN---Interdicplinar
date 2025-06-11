@@ -14,12 +14,53 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    nome: DataTypes.STRING,
-    email: DataTypes.STRING,
-    senha_hash: DataTypes.STRING
-  }, {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    nome: { 
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
+    },
+    senha_hash: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    telefone: {
+      type: DataTypes.STRING,
+      validate: {
+        is: '^[0-9()+-]{8,20}$'
+      }
+    }
+    
+  }, 
+  {
     sequelize,
     modelName: 'User',
+
+    indexes: [{ 
+      name: 'idx_usuario_email',
+      unique: true,
+      fields: ['email']
+    }]
+    
   });
+
+  User.associate = (models) => {
+    User.hasMany(models.Candidaturas, {
+      foreignKey: {
+        name: 'UserId',
+        type: DataTypes.INTEGER
+      }
+    });
+  };
+
   return User;
 };
