@@ -10,7 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Ongs.hasMany(models.Vagas,{
+      foreignKey: {
+        name: 'OngId',
+        type: DataTypes.INTEGER
+      }
+    });
     }
   }
   Ongs.init({
@@ -45,15 +50,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     modelName: 'Ongs',
   });
-
-  Ongs.associate = (models) => {
-    Ongs.hasMany(models.Vagas,{
-      foreignKey: {
-        name: 'OngId',
-        allowNull: false,
-        type: DataTypes.INTEGER
-      }
-    });
-  };
   return Ongs;
 };

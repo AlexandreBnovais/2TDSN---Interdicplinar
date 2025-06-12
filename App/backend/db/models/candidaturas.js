@@ -10,7 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Candidaturas.belongsTo(models.User, {
+        foreignKey: {
+          name: 'userId',
+          type: DataTypes.INTEGER
+        },
+        as: 'User'
+      });
+
+      Candidaturas.belongsTo(models.Vagas, {
+        foreignKey: {
+          name: 'VagaId',
+          type: DataTypes.INTEGER
+        },
+        as: 'Vagas'
+      })
     }
   }
   Candidaturas.init({
@@ -33,21 +47,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     modelName: 'Candidaturas',
   });
-
-  Candidaturas.associate = (models) => {
-    Candidaturas.belongsTo(models.Users, {
-      foreignKey: {
-        name: 'UserId',
-        type: DataTypes.INTEGER
-      }
-    });
-    
-    Candidaturas.belongsTo(models.Vagas, {
-      foreignKey: {
-        name: 'VagaId',
-        type: DataTypes.INTEGER
-      }
-    });
-  };
   return Candidaturas;
 };

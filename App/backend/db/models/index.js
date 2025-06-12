@@ -39,6 +39,13 @@ fs
     db[model.name] = model;
   });
 
+db.User = require('./user')(sequelize, Sequelize.DataTypes);
+db.Vagas = require('./vagas')(sequelize, Sequelize.DataTypes);
+db.Ongs = require('./ongs')(sequelize, Sequelize.DataTypes);
+db.Candidatura = require('./candidaturas')(sequelize, Sequelize.DataTypes);
+db.Categoria = require('./categorias')(sequelize, Sequelize.DataTypes);
+
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
