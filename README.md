@@ -14,7 +14,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `Node.js / VScode / mysql`
 - Você tem uma máquina `Windows / Linux / Mac`.
-- Você leu https://expressjs.com/.
 
 ## 🚀 Instalando ProUnitApp
 
@@ -24,14 +23,13 @@ Dentro da pasta que estiver o aquivo `Package ou package-look`digite o seguinte 
 ```
 npm install
 ```
-## Descrição
+### Descrição
 Este comando instala um pacote e quaisquer pacotes dos quais ele dependa. Se o pacote tiver um arquivo package-lock, um arquivo npm shrinkwrap ou um arquivo yarn lock, a instalação das dependências será controlada por ele, respeitando a seguinte ordem de precedência:
-
 saiba mais em 📘https://docs.npmjs.com/cli/v9/commands/npm-install
 
 ## ☕ Usando ProUnit App
 
-Para usar ProUnitApp, siga estas etapas:
+Para usar ProUnitApp certifique-se de ter instalado o expo go. Caso ja tenha uma conta na expo go, siga o passo a passo a baixo: 
 
 Rode o frontend do projeto expo usando o seguinte comando 
 ```
