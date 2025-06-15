@@ -23,6 +23,10 @@ Dentro da pasta que estiver o aquivo `Package ou package-look`digite o seguinte 
 ```
 npm install
 ```
+para atulizar ou instalar pacotes gerenciados pela expo não use npm. É mais prefirivel usar: 
+```
+npx expo install
+```
 ### Descrição
 Este comando instala um pacote e quaisquer pacotes dos quais ele dependa. Se o pacote tiver um arquivo package-lock, um arquivo npm shrinkwrap ou um arquivo yarn lock, a instalação das dependências será controlada por ele, respeitando a seguinte ordem de precedência:
 saiba mais em 📘https://docs.npmjs.com/cli/v9/commands/npm-install
