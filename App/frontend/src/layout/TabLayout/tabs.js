@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { TimeScreen } from '../../screens/TimeLineScreen/timeScreen';
 import { SearchScreen } from '../../screens/SearchScreen/searchScreen';
-import { FavoriteScreen } from '../../screens/FavoriteScreen/favoriteScreen';
 import { SettingsScreen } from '../../screens/SettingScreen/settingScreen';
 
 
@@ -23,8 +22,7 @@ export function Tabs () {
             backgroundColor: '#333',
             marginHorizontal: 20,
             borderRadius: 30,
-            height: 60,
-            ...styles.shadow
+            height: 60
           },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -32,8 +30,6 @@ export function Tabs () {
               iconName = focused ? 'home' : 'home';
             } else if (route.name === 'Search') {
               iconName = focused ? 'search' : 'search';
-            } else if (route.name === 'Favorite') {
-              iconName = focused ? 'favorite' : 'favorite';
             } else if (route.name === 'Settings') {
               iconName = focused ? 'menu' : 'menu';
             }
@@ -64,15 +60,6 @@ export function Tabs () {
         />
 
         <Tab.Screen 
-          name='Favorite' 
-          component={FavoriteScreen}
-          options={{
-            tabBarLabel: 'Favoritos',
-            tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
-          }} 
-        />
-
-        <Tab.Screen 
           name='Settings' 
           component={SettingsScreen}
           options={{
@@ -84,16 +71,3 @@ export function Tabs () {
     
   )
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: '#7F5D70',
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-});

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './style';
 
-export function singUpScreen() {
+export function SingUpScreen() {
     const [user , setUse] = useState();
     const [nome , setNome] = useState();
     const [email, setEmail] = useState();

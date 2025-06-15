@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../../screens/HomeScreen/homeScreen';
 import { LoginScreen } from '../../screens/LoginScreen/loginScreen';
-import { singUpScreen } from '../../screens/SingUpScreen/singUpScreen';
+import { SingUpScreen } from '../../screens/SingUpScreen/singUpScreen';
 import { Tabs } from '../TabLayout/tabs';
 
 // import WorkScreens 
@@ -22,7 +22,7 @@ export const Layout = () => {
         <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
             <Stack.Screen name='Home' component={HomeScreen} />
             <Stack.Screen name='Login' component={LoginScreen} />
-            <Stack.Screen name='singUp' component={singUpScreen} />
+            <Stack.Screen name='singUp' component={SingUpScreen} />
             <Stack.Screen name='Tab' component={Tabs}/>
             <Stack.Screen name='WorkDesc1' component={WorkDesc1} />
             <Stack.Screen name='WorkDesc2' component={WorkDesc2} />
