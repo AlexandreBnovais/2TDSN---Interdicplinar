@@ -1,12 +1,9 @@
 import React from 'react'
-import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { TimeScreen } from '../../screens/TimeLineScreen/timeScreen';
 import { SearchScreen } from '../../screens/SearchScreen/searchScreen';
-import { SettingsScreen } from '../../screens/SettingScreen/settingScreen';
-
-
+import { SettingScreen } from '../../screens/SettingScreen/settingScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,7 +58,7 @@ export function Tabs () {
 
         <Tab.Screen 
           name='Settings' 
-          component={SettingsScreen}
+          component={SettingScreen}
           options={{
             tabBarLabel: 'menu',
             tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
