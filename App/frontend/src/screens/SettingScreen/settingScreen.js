@@ -5,13 +5,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 function SettingScreen() {
+  const Navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
 
       <View style={styles.userContainer}>
-        <FontAwesome5 name="user-alt" size={100} color="black" />
+        <View style={styles.subUserContainer}>
+          <FontAwesome5 name="user" size={100} color="#656565" />
+        </View>
       </View>
 
       <View style={styles.configContainer}>
@@ -20,7 +25,7 @@ function SettingScreen() {
           <Text style={styles.textHelpContainer}>Ajuda</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.helpContainer}>
+        <TouchableOpacity style={styles.helpContainer} onPress={() => Navigation.navigate('Home')}>
           <Ionicons name="exit-outline" size={25} color="black" />
           <Text style={styles.textHelpContainer}>Sair</Text>
         </TouchableOpacity>

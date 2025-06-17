@@ -33,7 +33,7 @@ export function Tabs () {
             return <MaterialIcons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#fff',
-          tabBarInactiveTintColor: 'red',
+          tabBarInactiveTintColor: '#B8B8B8',
         }
       }}
       initialRouteName='TimeLine' 

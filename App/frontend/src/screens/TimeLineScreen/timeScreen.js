@@ -6,7 +6,6 @@ import {
     StyleSheet
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Feather from '@expo/vector-icons/Feather';
 import { FiltroItem } from '../../components/filtroItem';
 import { CardItem } from '../../components/cardItem';
 
@@ -107,7 +106,6 @@ export function TimeScreen() {
                     source={require('../../assets/proUnit.png')} 
                     resizeMode='cover'
                 /> 
-                <Feather name="mail" size={38} color="black" />
            </View>
            
             <View style={styles.viewFiltro}>

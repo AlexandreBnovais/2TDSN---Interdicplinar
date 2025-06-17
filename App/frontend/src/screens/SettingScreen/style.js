@@ -9,9 +9,20 @@ export const styles = StyleSheet.create({
         marginHorizontal: 45
     },
     userContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         padding: 30,
-        borderRadius: '50%',
-        borderWidth: 2        
+        paddingVertical: 50,
+        boxShadow: '0px 9px 24px -6px rgba(0, 0, 0, 0.25)',
+        width: '100%',
+        borderRadius: 20
+    },
+    subUserContainer: {
+        borderWidth: 1,
+        padding: 40,
+        backgroundColor: '#F7FF16',
+        borderRadius: '50%'
     },
     configContainer: {
         display: 'flex',
