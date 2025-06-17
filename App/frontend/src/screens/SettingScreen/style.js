@@ -19,8 +19,11 @@ export const styles = StyleSheet.create({
         borderRadius: 20
     },
     subUserContainer: {
-        borderWidth: 1,
-        padding: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 200,
+        height: 200,
         backgroundColor: '#F7FF16',
         borderRadius: '50%'
     },

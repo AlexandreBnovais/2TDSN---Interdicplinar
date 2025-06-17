@@ -15,7 +15,7 @@ function SettingScreen() {
 
       <View style={styles.userContainer}>
         <View style={styles.subUserContainer}>
-          <FontAwesome5 name="user" size={100} color="#656565" />
+          <FontAwesome5 name="user" size={80} color="#656565" />
         </View>
       </View>
 
