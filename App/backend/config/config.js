@@ -1,24 +1,30 @@
-const mysql = require('mysql2');
-require('dotenv').config();
+const { createPool } = require('mysql2');
+require('dotenv').config()
 
-const pool = mysql.createPool({
+const pool = createPool({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-    connectionLimit: 10,
-    waitForConnections: 1
+    connectionLimit: 10
+});
+
+pool.getConnection((err, connection) => {
+    if(err) throw err;
+    console.log('Database connected sucessfully');
+    connection.release();
 });
 
 process.on('SIGINT', () => {
     pool.end(err => {
         if(err) {
-            console.error('Error closing the pool', err);
+            console.error('Error closing the pool', err)
         }else {
-            console.log('Database pool closed')
+            console.log('Database pool closed');
         }
         process.exit(0)
     })
-})
+});
 
-module.exports = pool.promise;
+
+module.exports = pool.promise();
