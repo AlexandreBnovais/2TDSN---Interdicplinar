@@ -1,16 +1,19 @@
-const { createPool } = require('mysql2');
+const mysql = require('mysql2');
 require('dotenv').config()
 
-const pool = createPool({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+const pool = mysql.createPool({
+    host: process.env.HOST || 'localhost',
+    user: process.env.USER || 'root',
+    password: process.env.PASSWORD || 'root',
+    database: process.env.DATABASE || 'voluntariado',
     connectionLimit: 10
 });
 
 pool.getConnection((err, connection) => {
-    if(err) throw err;
+    if(err) {
+        console.error('Error connecting to the database', err);
+        process.exit(1);
+    }
     console.log('Database connected sucessfully');
     connection.release();
 });
@@ -26,5 +29,5 @@ process.on('SIGINT', () => {
     })
 });
 
-
 module.exports = pool.promise();
+
