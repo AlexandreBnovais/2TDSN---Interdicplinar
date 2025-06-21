@@ -2,7 +2,7 @@ const { pool } = require('../config/config');
  
 exports.testController = async (req, res) => {
     try {
-        const [rows] = await pool.promise().query('SELECT * FROM users');
+        const [rows] = await pool.promise().query('SELECT * FROM usuarios');
         console.log('Rows: ', rows);
         res.status(200).json({message: 'Test successfully executed', data: rows});
 
