@@ -3,11 +3,11 @@ import {
     View, 
     FlatList,
     Image,
-    StyleSheet
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FiltroItem } from '../../components/filtroItem';
 import { CardItem } from '../../components/cardItem';
+import { styles } from './style';
 
 export function TimeScreen() {    
     const [vagas, setVagas] = useState([]);
@@ -128,20 +128,4 @@ export function TimeScreen() {
     )
 }
 
-const styles = StyleSheet.create({
-    logoContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    },
-    viewFiltro: {
-        marginVertical: 20,
-        paddingVertical: 10,
-    },
-    imageContainer: {
-        width: 100,
-        height: 100,
-    },
-})
 
