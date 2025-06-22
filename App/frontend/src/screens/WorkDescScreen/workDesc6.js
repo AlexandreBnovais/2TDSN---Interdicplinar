@@ -3,7 +3,6 @@ import {
   View,
   Text,
   ImageBackground,
-  StyleSheet,
   TouchableOpacity
 } from 'react-native';
 import {styles} from './style';
