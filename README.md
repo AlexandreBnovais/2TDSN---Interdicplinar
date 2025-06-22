@@ -13,6 +13,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `Node.js / VScode / mysql`
+- Conceitos basicos sobre JavaScript 
 - Você tem uma máquina `Windows / Linux / Mac`.
 
 ## 🚀 Instalando ProUnitApp
