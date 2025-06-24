@@ -53,7 +53,7 @@ exports.userVacancie = async (req, res) => {
 
 // Controller para listar todas as candidaturas do usuario
 exports.listUserVacancy = async (req,res) => {
-    const user_id = req.params;
+    const user_id = req.params.id;
 
     try {
         const [rows] = await pool.promise().execute(
@@ -72,7 +72,7 @@ exports.listUserVacancy = async (req,res) => {
         res.json(rows);
     }catch (err) {
         console.error('Erro ao buscar candidaturas do usuário:', err);
-        res.status(500).json({ message: 'Erro interno do servidor.' });
+        res.status(500).json({ message: 'Erro interno do servidor.', error: err.message });
     }
 }  
 
