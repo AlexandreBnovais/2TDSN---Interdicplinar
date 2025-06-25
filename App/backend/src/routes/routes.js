@@ -4,6 +4,7 @@ const vagasController = require('../controllers/vagasController');
 const userControll = require('../controllers/userController');
 const userVacancyController = require('../controllers/userVacancyController');
 
+
 route.get('/', (req,res) => {
     res.send('API is running');
 });

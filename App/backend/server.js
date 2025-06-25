@@ -5,9 +5,10 @@ require('dotenv').config();
 const routes = require('./src/routes/routes')
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors()); // Permite o react native acesse o backend
 app.use(express.json());
-app.use(routes);
+
+app.use('/api', routes);
 
 app.listen(PORT, () => {
     try{

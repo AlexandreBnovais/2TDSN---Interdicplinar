@@ -1,14 +1,28 @@
-import React, {useState} from 'react';
-import { View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { View, TextInput, Image, TouchableOpacity, Text, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import axios, { Axios } from 'axios'
 import { styles } from './style';
 
 export function LoginScreen() {
     const navigation = useNavigation();
     const [isName, setName] = useState('');
     const [isPassword, setPassword] = useState('');
-    
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        handleLogin()
+    }, []);
+
+    const handleLogin = async () => {
+        const url = 'http://192.168.15.2:5000/api/login';
+
+        if(!isName || !isPassword) {
+            Alert.alert('Preencha os campos obrigatorios')
+        }
+        
+    }    
     return (
         <LinearGradient 
             colors={['#34474B','#83BECC','#B2EDFA']}

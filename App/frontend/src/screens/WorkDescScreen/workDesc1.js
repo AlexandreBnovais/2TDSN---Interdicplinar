@@ -3,14 +3,12 @@ import {
   View,
   Text,
   ImageBackground,
-  StyleSheet,
   TouchableOpacity
 } from 'react-native';
 import {styles} from './style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { StatusBar } from 'react-native-web';
 
 export function WorkDesc1() {
   const Navigation = useNavigation();
