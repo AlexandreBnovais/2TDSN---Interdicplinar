@@ -13,40 +13,6 @@ export function SingUpScreen() {
 
     const navigation = useNavigation();
 
-    const handleRegister = async () => {
-        if(!nome || !email ) {
-            Alert.alert('Preencha todos os campos');
-            return;
-        }
-
-        const url = 'http://192.168.15.2:5000/api/createUser';
-
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type':'Application/json' },
-                body: JSON.stringify({
-                    nome: "nome",
-                    email: "email",
-                    senha: "senha"
-                })
-            });
-
-            if(!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Erro ao cadastrar usuario')
-            }
-
-            const data = await response.json();
-            Alert.alert('Usuario cadastrado com sucesso!', data);
-            navigation.navigate('Login');
-
-        }catch(err) {
-            Alert.alert('Error ao cadastrar', err.message);
-            console.error('Error ao cadastrar usuario', err.message)
-        }
-    }
-
     return(
         <LinearGradient
             colors={["#E3B2FA" , "#B983CC" , "#44344B"]}
@@ -87,7 +53,7 @@ export function SingUpScreen() {
                     style={styles.textInput}
                 /> 
 
-                <TouchableOpacity style={styles.button} onPress={handleRegister}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.textButton}>Cadastre-se</Text>
                 </TouchableOpacity>
             </View>
